@@ -1,0 +1,18 @@
+<h2>Movies Details</h2> 
+
+<hr/>
+<div *ngIf="movie">
+  <div>
+    <label><b>Name: </b></label> {{movie.name}}
+  </div>
+  <div>
+    <label><b>Author: </b></label> {{movie.author}}
+  </div>
+  <div>
+    <label><b>Description: </b></label> {{movie.description}}
+  </div>  
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to Movie List</button><br>
