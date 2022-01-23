@@ -13,7 +13,9 @@ import { Observable } from 'rxjs';
 export class MoviesListComponent implements OnInit {
   movies: Observable<Movies[]>
 
-  constructor(private moviesService : MoviesService, private router: Router) { }
+  constructor(private moviesService : MoviesService, private router: Router) {
+    
+   }
 
   ngOnInit() {
     this.reloadData();

@@ -7,8 +7,7 @@ import { UpdateMoviesComponent } from './update-movies/update-movies.component';
 import { AutoComponent } from './auto/auto.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'auto', pathMatch: 'full' },
-  { path: 'auto', component: AutoComponent },
+  { path: '', redirectTo: 'movies', pathMatch: 'full' },
   { path: 'movies', component: MoviesListComponent },
   { path: 'add', component: CreateMoviesComponent },
   { path: 'update/:id', component: UpdateMoviesComponent },
