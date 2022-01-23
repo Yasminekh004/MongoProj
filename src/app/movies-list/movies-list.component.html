@@ -1,30 +1,35 @@
-
-<div class="panel panel-primary">
-    <div class="panel-heading">
-      <h2>Movies List</h2>
-    </div>
-    <div class="panel-body">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Author</th>
-            <th>Description</th>
-            <th>Watched</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let m of movies | async" (click)="MoviesDetails(m.id)">
-            <td>{{m.name}}</td>
-            <td>{{m.author}}</td>
-            <td>{{m.description}}</td>
-            <td>{{m.watched}}</td>
-            <td><button (click)="deleteMovies(m.id)" class="btn btn-danger">Delete</button>
-				<button (click)="updateMovies(m.id)" class="btn btn-info" style="margin-left: 10px">Update</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+<button class="btn btn-success my-2" routerLink="/add">Add Movie</button>
+<div class="card">
+  <div class="card-body">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h2>Movies List</h2>
+      </div>
+      <div class="panel-body">
+        <table class="table " *ngIf="(movies | async)?.length!=0">
+          <thead >
+            <tr>
+              <th>Name</th>
+              <th>Author</th>
+              <th>Description</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let m of movies | async" >
+              <td>{{m.name}}</td>
+              <td>{{m.author}}</td>
+              <td>{{m.description}}</td>
+              <td>
+                <button (click)="MoviesDetails(m.id)" class="btn btn-light border"  >Details</button>
+                <button (click)="updateMovies(m.id)" class="btn btn-primary mx-1">Update</button>
+                <button (click)="deleteMovies(m.id)" class="btn btn-danger ">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div *ngIf="(movies | async)?.length==0" class="text-center my-5"><h5><b>NO DATA FOUND</b></h5></div>
+      </div>
     </div>
   </div>
+</div>

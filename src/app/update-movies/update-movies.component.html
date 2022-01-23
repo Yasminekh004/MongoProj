@@ -1,23 +1,31 @@
-<h3>Update Movies</h3>
-  <form (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label for="name">Name</label>
-      <input type="text" class="form-control" id="name" required [(ngModel)]="movie.name" name="name">
-    </div>
+<div class="container">
+  <div class="row">
+    <div class="col-7 mx-auto card p-4">
+      <h3>Update Movies</h3>
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" required [(ngModel)]="movie.name" name="name">
+        </div>
 
-    <div class="form-group">
-      <label for="Author">Author</label>
-      <input type="text" class="form-control" id="Author" required [(ngModel)]="movie.author" name="Author">
-    </div>
+        <div class="form-group">
+          <label for="Author">Author</label>
+          <input type="text" class="form-control" id="Author" required [(ngModel)]="movie.author" name="Author">
+        </div>
 
-    <div class="form-group">
-      <label for="Description">Description</label>
-      <input type="text" class="form-control" id="Description" required [(ngModel)]="movie.description" name="Description">
+        <div class="form-group">
+          <label for="Description">Description</label>
+          <input type="text" class="form-control" id="Description" required [(ngModel)]="movie.description"
+            name="Description">
+        </div>
+        <div class="form-group">
+          <label for="Description">Watched</label>
+          <input type="text" class="form-control" id="watched" required [(ngModel)]="movie.watched" name="watched">
+        </div>
+        <br>
+        <button type="submit" class="btn btn-success float-right">Submit</button>
+        <button routerLink="../" class="btn btn-light border mx-1 float-right">Cancel</button>
+      </form>
     </div>
-    <div class="form-group">
-      <label for="Description">Watched</label>
-      <input type="text" class="form-control" id="watched" required [(ngModel)]="movie.watched" name="watched">
-    </div>
-<br>
-    <button type="submit" class="btn btn-success">Submit</button>
-  </form>
+  </div>
+</div>

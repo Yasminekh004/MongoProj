@@ -1,18 +1,27 @@
-<h2>Movies Details</h2> 
+<div class="container">
+  <div class="row">
+    <div class="col-7 mx-auto card p-4">
+      <h2>Movies Details</h2>
 
-<hr/>
-<div *ngIf="movie">
-  <div>
-    <label><b>Name: </b></label> {{movie.name}}
+      <hr />
+      <div *ngIf="movie">
+        <div>
+          <label><b>Name: </b></label> {{movie.name}}
+        </div>
+        <div>
+          <label><b>Author: </b></label> {{movie.author}}
+        </div>
+        <div>
+          <label><b>Description: </b></label> {{movie.description}}
+        </div>
+        <div>
+          <label><b>Watched: </b></label> {{movie.watched}}
+        </div>
+      </div>
+
+      <br>
+      <br>
+      <button (click)="list()" class="btn btn-light border">Back to Movie List</button><br>
+    </div>
   </div>
-  <div>
-    <label><b>Author: </b></label> {{movie.author}}
-  </div>
-  <div>
-    <label><b>Description: </b></label> {{movie.description}}
-  </div>  
 </div>
-
-<br>
-<br>
-<button (click)="list()" class="btn btn-primary">Back to Movie List</button><br>
